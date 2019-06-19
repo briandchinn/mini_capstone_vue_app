@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="products-index">
 
     <h1 class="mt-3">{{ message }}</h1>
     <div v-for="product in products">
@@ -8,13 +8,16 @@
         <img v-bind:src="product.image_url">
       </router-link>
       <div>
-        <button class="btn btn-secondary mt-3" v-on:click="showProduct(product)">More Info</button>
+        <button class="btn btn-secondary mt-3">
+          <router-link v-bind:to="'/products/' + product.id">More Info</router-link>
+        </button>
+
       </div>
       <div v-if="product === currentProduct">
         <button class="btn btn-danger mt-3 ml-2" v-on:click="destroyProduct(product)">Delete</button>
       </div>
-      </div>
     </div>
+  </div>
 
   </div>
 </template>
