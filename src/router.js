@@ -4,6 +4,7 @@ import ProductsIndex from './views/Products/Index.vue'
 import ProductsNew from './views/Products/New.vue'
 import ProductsShow from './views/Products/Show.vue'
 import ProductsEdit from './views/Products/Edit.vue'
+import Map from './views/Map.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/products/:id/edit',
       name: 'products-edit',
       component: ProductsEdit
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: Map
     }
   ]
 })
